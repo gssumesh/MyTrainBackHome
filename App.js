@@ -62,7 +62,7 @@ export default class App extends React.Component {
 		    imageStyle={[styles.image, {opacity: 0.3 }]}
 		  >
 							<Text style={[styles.smallText, styles.textStyle]}>
-										{"Next Train departs from"}	
+										{"Next train departs from"}	
 									</Text>
 
 						<Text style={[styles.largeText, styles.textStyle]}>
