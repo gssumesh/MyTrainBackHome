@@ -23,6 +23,8 @@
     "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-native": "0.50.3",
-    "react-native-circular-progress": "^0.1.0"
+    "react-native-circular-progress": "^0.1.0",
+    "react-native-elements": "^0.18.5",
+    "react-native-linear-gradient": "^2.3.0"
   }
 }
