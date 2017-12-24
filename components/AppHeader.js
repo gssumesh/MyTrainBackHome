@@ -11,9 +11,20 @@ export default class AppHeader extends React.Component{
 
 	componentDidMount(){
 		const {secondsToLeave} = this.props;
-		this.refs.circularProgress.performLinearAnimation(100, secondsToLeave * 1000);
+  }
 
-	}
+  animateProgress(secondsToLeave){
+    const progressView = this.refs.circularProgress;
+    progressView ? progressView.performLinearAnimation(100, secondsToLeave * 1000): null;
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.secondsToLeave != this.props.secondsToLeave){
+      //alert(nextProps.secondsToLeave);
+
+      this.animateProgress(nextProps.secondsToLeave);
+    }
+  }
 
 	render(){
 		const { destination, secondsToLeave} = this.props;
@@ -25,6 +36,9 @@ export default class AppHeader extends React.Component{
 
 				<Text style={[styles.largeText, styles.textStyle]}>
 					{destination}	
+				</Text>
+				<Text style={[styles.largeText, styles.textStyle]}>
+					{secondsToLeave}	
 				</Text>
 				<AnimatedCircularProgress
 					size={200}
